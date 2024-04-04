@@ -60,7 +60,7 @@ global:
     allowClusterRoles: true
   ## https://docs.gitlab.com/charts/charts/globals#configure-host-settings
   hosts:
-    domain: gitlab.otus.dns-cloud.net
+    domain: otus.dns-cloud.net
     hostSuffix:
     https: true
     externalIP:
