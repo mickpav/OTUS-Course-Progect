@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: {{ .Release.Name }}-{{ .Chart.Name }}
+  labels:
+    app: project
+    component: ui
+    release: {{ .Release.Name }}
+spec: 
+  replicas: 3
+  selector:
+    matchLabels:
+      app: project
+      component: ui
+      release: {{ .Release.Name }}
+  template: 
+    metadata:
+      name: ui-pod
+      labels:
+        app: project
+        component: ui
+        release: {{ .Release.Name}}
+    spec:
+      containers:
+      - image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}" 
+        name: ui
+        ports: 
+        - containerPort: {{ .Values.service.internalPort }}
+        env:
+          - name: MONGO
+            value: mongodb
+          - name: MONGO_PORT
+            value: '27017'
+

@@ -1,0 +1,7 @@
+name: crawler
+version: 1.0.0
+description: OTUS graduate work application crawler
+maintainers:
+  - name: Michael
+  - email: mickpav@gmail.com
+appVersion: 1.0.0

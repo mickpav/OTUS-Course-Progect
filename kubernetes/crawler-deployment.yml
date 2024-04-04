@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: crawler
+  labels:
+    app: search-engine
+    component: crawler
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: search-engine
+      component: crawler
+  template:
+    metadata:
+      name: crawler
+      labels:
+        app: search-engine
+        component: crawler
+    spec:
+      containers:
+      - image: motek/crawler
+        name: crawler
+        env:
+          - name: MONGO
+            value: mongodb
+          - name: MONGO_PORT
+            value: '27017'

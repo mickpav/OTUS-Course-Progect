@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prometheus
+  labels:
+    app: search-engine
+    component: prometheus
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: search-engine
+      component: prometheus
+  template:
+    metadata:
+      name: prometheus
+      labels:
+        app: search-engine
+        component: prometheus
+    spec:
+      containers:
+      - image: motek/prometheus:latest
+        name: prometheus

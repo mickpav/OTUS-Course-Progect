@@ -1,0 +1,9 @@
+dependencies:
+- name: crawler
+  repository: file://../crawler/
+  version: 1.0.0
+- name: ui
+  repository: file://../ui/
+  version: 1.0.0
+digest: sha256:3108847054c1fbe2de0d93ad282d22e4e0f697f64da81877ffc57725835ae16c
+generated: "2024-04-02T16:19:59.193661039+10:00"

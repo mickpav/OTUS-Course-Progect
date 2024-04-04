@@ -1,0 +1,7 @@
+service:
+  internalPort: 8000
+  externalPort: 8000
+
+image:
+  repository: motek/ui
+  tag: latest

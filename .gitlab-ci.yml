@@ -1,0 +1,31 @@
+stages:
+  - build1
+  - build2
+  - test1
+  - test2
+  - deploy
+
+build_job1:
+  stage: build1
+  script:
+    - echo 'Building 1'
+
+build_job2:
+  stage: build2
+  script:
+    - echo 'Buildind 2'
+
+test_unit_job1:
+  stage: test1
+  script:
+    - echo 'Testing 1'
+
+test_unit_job2:
+  stage: test2
+  script:
+    - echo 'Testing 2'
+
+deploy_job:
+  stage: deploy
+  script:
+    - echo 'Deploy'

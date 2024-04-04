@@ -1,0 +1,10 @@
+crawler:
+  image: 
+    repository: motek/crawler
+    tag: latest
+
+ui:
+  image:
+    repository: motek/ui
+  service:
+    externalPort: 8000  
