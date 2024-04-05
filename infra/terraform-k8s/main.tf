@@ -41,6 +41,11 @@ resource "yandex_kubernetes_node_group" "k8s-test-group" {
 
   version     = var.k8s_version
   count       = var.node_count
+  name        = "worker_node-${count.index}"
+  
+  metadata = {
+    ssh-keys = "appuser:${file(var.public_key_path)}"
+  }
 
   instance_template {
     platform_id = "standard-v2"
